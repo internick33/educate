@@ -1,0 +1,21 @@
+.cambiarColor{
+    color: rgb(46, 153, 253);
+}
+
+.cambiarFondo{
+    /* background-image: url('img/banner.jpg'); */
+    /* background-image: url("https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png"); */
+    background-image: url("../img/banner.jpg");
+    background-color: black;
+    height: 453px;
+}
+
+.cambiarLink{
+    color: rgb(26, 185, 79);
+}
+
+.exito {
+    color: blueviolet;
+    align-items: center;
+    text-align: center;
+}
