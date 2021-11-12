@@ -13,10 +13,10 @@
 
         $con = new mysqli('localhost','root','','iti7');
 
-        if($con)
-            echo "<h1>Conexion exitosa</h1>";
-        else 
-            echo "<h1>Conexion fallida</h1>";
+        // if($con)
+        //     echo "<h1>Conexion exitosa</h1>";
+        // else 
+        //     echo "<h1>Conexion fallida</h1>";
 
     ?>
 </body>

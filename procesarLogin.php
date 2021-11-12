@@ -1,14 +1,13 @@
 <?php
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $usuario = $_POST['username'];
+    $contra = $_POST['password'];
 
     include 'conexion.php';
-    $login = $con->query("SELECT * FROM usuario where username='$username' and password='$password'");
+
+    $login = $con->query("SELECT * FROM usuario where username='$usuario' and password='$contra'");
      
     $num_resultados = mysqli_num_rows($login);
-
-    //echo $num_resultados;
 
     if($num_resultados > 0) {
         header('Location: admin.php');

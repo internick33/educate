@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>Educat Buscador Online</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="container">
+  <h1>Educat Buscador Online</h1>
+
+  <form action="resultados.php" method="POST">
+    Elige Tipo de Busqueda:<br>
+    <select name="tipobusqueda">
+      <option value="username">Username
+      <option value="password">Password
+    </select>
+    <br>
+    Escribe Termino Busqueda:<br>
+    <input name="terminobusqueda" type=text>
+    <br>
+    <input type=submit value="Buscar">
+  </form>
+
+</body>
+</html>

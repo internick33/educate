@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/miestilo.css">
     <title>Educa-T</title>
-
-    
-
 </head>
 <body class="container">
         <nav class="navbar navbar-expand-md navbar-light fixed-top " style="background: #2980b9;  /* fallback for old browsers */
@@ -33,10 +30,9 @@
                 <a class="nav-link disabled" href="#" style="color: white;">Disabled</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="login.php" style="color: white;">Login</a>
               </li>
             </ul>
-
-           
 
             
             
@@ -45,37 +41,13 @@
     
         <main role="main">
           <!-- Main jumbotron for a primary marketing message or call to action -->
-          <div class="jumbotron " style="margin-top:100px;">
-            <div class="container" >
-              <h1 class="display-3 text-center">administracion del Sistema!</h1>
-              <p class="text-center">Bienvenido a la administracion de educ-t.</p>
+          <div class="jumbotron cambiarFondo2">
+            <div class="container">
+              <h1 class="display-3">No tienes acceso al sistema</h1>
+              <a href="index.html" class="btn btn-outline-success ">Volver al inicio</a>
             </div>
           </div>
-    
-          <div class="container">
-            <!-- Example row of columns -->
-            <div class="row">
-              <div class="col-md-3 offset-md-1">
-                <h2>Usuarios</h2>
-                <img src="img/3.png" alt="" class="img-thumbnail" style="margin-top: 15px; margin-bottom: 25px;">
-                <p><a class="btn btn-outline-success" href="listarUsuarios.php">Ver Usuarios &raquo;</a></p>
-              </div>
-              <div class="col-md-3 offset-md-1">
-                <h2>Alumnos</h2>
-                <img src="img/4.png" alt="" class="img-thumbnail" style="margin-top: 15px; margin-bottom: 25px;">
-                <p><a class="btn btn-outline-warning " href="listarAlumnos.php">Ver Alumnos &raquo;</a></p>
-              </div>
-              <div class="col-md-3 offset-md-1">
-                <h2>Cursos</h2>
-                <img src="img/5.png" alt="" class="img-thumbnail" style="margin-top: 15px; margin-bottom: 25px;">
-                <p><a class="btn btn-outline-info" href="listarCursos.php">Ver cursos &raquo;</a></p>
-              </div>
-            </div>
-    
-            <hr>
-    
-          </div> <!-- /container -->
-    
+  
         </main>
     
         <footer class="container">
