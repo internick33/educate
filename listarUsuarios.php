@@ -113,9 +113,9 @@
                       ?>    
                 </table>
 
-                <div class="col-md-8 offset-md-2">
+                <div class="col-md-8 offset-md-4">
                   <a href="insertarUsuario.php" class="btn btn-info"><i class="fa fa-plus"></i>Agregar usuario</a>
-                  <a href="buscarUsuario.php" class="btn btn-outline-success"><i class="fa fa-search-plus"></i>Buscar Usuario</a>
+                  
                 </div>
               </div>
             </div>

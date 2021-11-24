@@ -36,7 +36,7 @@
   include 'conexion.php';
 
   $terminobusqueda = $_POST['terminobusqueda'];
-  $tipobusqueda = $_POST['tipobusqueda'];
+  $tipobusqueda = $_POST['tipobusqueda']; 
 
   trim ($terminobusqueda);
 
@@ -57,11 +57,11 @@
 
   for ($i=0; $i <$num_resultados; $i++)
   {
-   $row = mysqli_fetch_array($buscar);
+     $row = mysqli_fetch_array($buscar);
      echo "<p><strong>".($i+1).". Username: ";
      echo stripslashes($row["nombre"]);
      echo "</strong><br>Password: ";
-     echo stripslashes($row["password"]);
+     echo stripslashes($row[word"]);
      echo "</p>";
   }
 
