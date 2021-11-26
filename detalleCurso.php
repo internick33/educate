@@ -77,48 +77,33 @@
             <!-- Example row of columns -->
             <div class="row">
               <div class="col-md-10 offset-md-1">
-                <h2>Lista de Cursos</h2>
-                <table class="table table-dark table-striped table-hover">
-                      <tr>
-                            <th>Clave</th>
-                            <th>Nombre</th>
-                            <th>Descripcion</th>
-                            <th>Duracion</th>
-                            <th>Precio</th>
-                            <th>Acciones</th>
-                      </tr>
-
+                <h2>Detalle del Curso</h2>
+                <table class="table">
                       <?php
-                          $repetir = $con->query("SELECT * FROM curso");
+                          $id = $_REQUEST['id'];
+                          $repetir = $con->query("SELECT * FROM curso WHERE clave = '$id'");
+                          
                           while($fila = $repetir->fetch_assoc()){
                       ?>    
-                          <tr>
-                           
-                              <td><?php echo $fila['clave'] ?></td>
-                              <td><?php echo $fila['nombre'] ?></td>
-                              <td><?php echo $fila['descripcion'] ?></td>
-                              <td><?php echo $fila['duracion'] ?></td>
-                              <td><?php echo $fila['precio'] ?></td>
-                                  
-                              <td>
-                                <a href="eliminarUsuario.php?id=<?php echo $fila['clave'] ?>" >
-                                  <i class="fa fa-trash-o btn-danger p-2" style=" border-radius: 5px 5px 5px 5px;"></i>
-                                </a>
-                                <a href="actualizarUsuario.php?id=<?php echo $fila['clave'] ?>" >
-                                  <i class="fa fa-pencil btn-info p-2" style=" border-radius: 5px 5px 5px 5px;"></i>
-                                </a>
-                                <a href="detalleCurso.php?id=<?php echo $fila['clave'] ?>" >
-                                  <i class="fa fa-eye btn-success p-2" style=" border-radius: 5px 5px 5px 5px;"></i>
-                                </a>
-                              </td>
-                          </tr>
+                        <tr>
+                          <td>
+                            <img src="img/<?php echo $fila['clave'] ?>.png" alt="" width="80%" class="img img-thumbnail">
+                          </td>
+                          <td>
+                              <p><b>Clave:</b><?php echo $fila['clave'] ?></p>
+                              <p><b>Nombre del curso:</b> <?php echo $fila['nombre'] ?></p>
+                              <p><b>Descripcion del curso:</b> <?php echo $fila['descripcion'] ?></p>
+                              <p><b>Duracion:</b> <?php echo $fila['duracion'] ?></p>
+                              <p><b>Precio:</b> <?php echo $fila['precio'] ?></p>
+                          </td>
+                        </tr>  
                       <?php
                         }
                       ?>    
                 </table>
 
                 <div class="col-md-4 offset-md-5">
-                  <a href="insertarUsuario.php" class="btn btn-info"><i class="fa fa-plus"></i>Agregar curso</a>
+                  <a href="listarCursos.php" class="btn btn-info"><i class="fa fa-plus"></i>Volver</a>
                 </div>
               </div>
             </div>
