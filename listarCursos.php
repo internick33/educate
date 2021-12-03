@@ -104,7 +104,7 @@
                                 <a href="eliminarUsuario.php?id=<?php echo $fila['clave'] ?>" >
                                   <i class="fa fa-trash-o btn-danger p-2" style=" border-radius: 5px 5px 5px 5px;"></i>
                                 </a>
-                                <a href="actualizarUsuario.php?id=<?php echo $fila['clave'] ?>" >
+                                <a href="actualizarCurso.php?id=<?php echo $fila['clave'] ?>" >
                                   <i class="fa fa-pencil btn-info p-2" style=" border-radius: 5px 5px 5px 5px;"></i>
                                 </a>
                                 <a href="detalleCurso.php?id=<?php echo $fila['clave'] ?>" >
