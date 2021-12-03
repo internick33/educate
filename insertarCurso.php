@@ -34,12 +34,7 @@
               </li>
               <li class="nav-item">
               </li>
-            </ul>
-
-           
-
-            
-            
+            </ul>            
           </div>
         </nav>
     
@@ -48,32 +43,51 @@
           <div class="jumbotron " style="margin-top:100px;">
             <div class="container" >
               <h1 class="display-3 text-center">administracion del Sistema!</h1>
-              <p class="text-center">Bienvenido a la administracion de educ-t.</p>
+              <p class="text-center">Insertar nuevo curso.</p>
             </div>
           </div>
     
           <div class="container">
-            <!-- Example row of columns -->
-            <div class="row">
-              <div class="col-md-3 offset-md-1">
-                <h2 style="margin-left:40px;">Usuarios</h2>
-                <img src="img/3.png" alt="" class="img-thumbnail" style="margin-top: 15px; margin-bottom: 25px;">
-                <p style="margin-left:25px"><a class="btn btn-outline-success" href="listarUsuarios.php" >Ver Usuarios &raquo;</a></p>
+              <div class="col-md-6 offset-md-3">
+                
+                <h2 class="text-center text-primary">Insertar nuevo Curso</h2>
+                <form action="guardarCurso.php" method="POST">
+
+                  <div class="form-group">
+                      <label>Clave</label>
+                      <input type="text" class="form-control" name="clave" placeholder="Escribe la clave del curso" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" class="form-control" name="nombre" placeholder="Escribe el nombre del curso" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Descripcion</label>
+                    <textarea class="form-control" name="descripcion" rows="5" required></textarea>
+                  </div>
+
+                  <div class="form-group">
+                      <label>Duracion</label>
+                      <select name="duracion" class="custom-select">
+                        <option value="5 horas">5 Horas
+                        <option value="10 horas">10 Horas
+                        <option value="15 horas">15 Horas
+                        <option value="20 horas">20 Horas      
+                      </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Precio</label>
+                    <input type="text" class="form-control" name="precio" placeholder="Escribe el precio del curso" required>
+                  </div>
+          
+                  <button type="submit" class="btn btn-block btn-primary">Guardar Curso</button>
+                </form>
+              
               </div>
-              <div class="col-md-3 offset-md-1">
-                <h2 style="margin-left:40px;">Alumnos</h2>
-                <img src="img/4.png" alt="" class="img-thumbnail" style="margin-top: 15px; margin-bottom: 25px;">
-                <p  style="margin-left:25px"><a class="btn btn-outline-warning " href="listarAlumnos.php">Ver Alumnos &raquo;</a></p>
-              </div>
-              <div class="col-md-3 offset-md-1">
-                <h2 style="margin-left:40px;">Cursos</h2>
-                <img src="img/5.png" alt="" class="img-thumbnail" style="margin-top: 15px; margin-bottom: 25px;">
-                <p  style="margin-left:35px"><a class="btn btn-outline-info" href="listarCursos.php">Ver cursos &raquo;</a></p>
-              </div>
-            </div>
-    
-            <hr>
-    
+          </div>
           </div> <!-- /container -->
     
         </main>

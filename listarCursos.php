@@ -118,7 +118,7 @@
                 </table>
 
                 <div class="col-md-4 offset-md-5">
-                  <a href="insertarUsuario.php" class="btn btn-info"><i class="fa fa-plus"></i>Agregar curso</a>
+                  <a href="insertarCurso.php" class="btn btn-info"><i class="fa fa-plus"></i>Agregar curso</a>
                 </div>
               </div>
             </div>
