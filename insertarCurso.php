@@ -51,7 +51,7 @@
               <div class="col-md-6 offset-md-3">
                 
                 <h2 class="text-center text-primary">Insertar nuevo Curso</h2>
-                <form action="guardarCurso.php" method="POST">
+                <form enctype="multipart/form-data" action="guardarCurso.php" method="POST">
 
                   <div class="form-group">
                       <label>Clave</label>
@@ -81,6 +81,12 @@
                   <div class="form-group">
                     <label>Precio</label>
                     <input type="text" class="form-control" name="precio" placeholder="Escribe el precio del curso" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Selecciona una imagen</label>
+                    <input type="hidden"  class="form-control" name="MAX_FILE_SIZE" value="1024000" />
+                    <input name="subir_archivo" type="file" />
                   </div>
           
                   <button type="submit" class="btn btn-block btn-primary">Guardar Curso</button>

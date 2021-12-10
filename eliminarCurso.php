@@ -6,29 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/miestilo.css">
+
     <title>Educa-T</title>
-
-
-    <?php
-        include 'conexion.php';
-
-        $clave = $_POST['clave'];
-        $nombre = $_POST['nombre'];
-        $descripcion = $_POST['descripcion'];
-        $duracion = $_POST['duracion'];
-        $precio = $_POST['precio'];
-       
-        $insertar = $con->query("INSERT INTO curso VALUES ($clave,'$nombre', '$descripcion', '$duracion', '$precio')");
-
-        $archivo_origen = $_FILES['subir_archivo']['tmp_name'];
-        $archivo_final = "./archivos/".$clave.".jpg";
-
-        if(move_uploaded_file($archivo_origen, $archivo_final)){
-          print "El archivo fue subido con éxito.";
-        }else{
-          print "Error al intentar subir el archivo.";
-        } 
-    ?>
 
 
 </head>
@@ -67,7 +46,18 @@
           <!-- Main jumbotron for a primary marketing message or call to action -->
           <div class="jumbotron cambiarFondo2">
             <div class="container">
-              <h1 class="display-3"><b>Curso guardado con exito</b></h1>
+            <?php
+                include 'conexion.php';
+
+                $clave = $_REQUEST['id'];
+              
+                $con->query("DELETE FROM curso WHERE clave='$clave'");
+
+                // echo'<script type="text/javascript">
+                // alert("curso eliminado con exito");
+                // </script>';
+            ?>
+              <h1 class="display-3"><b>Curso BORRADO con exito</b></h1>
               <a href="listarCursos.php" class="btn btn-outline-success offset-md-3 mt-4 ">Volver a la administracion de los cursos</a>
             </div>
           </div>
@@ -78,10 +68,17 @@
           <p>&copy; Company 2017-2018</p>
         </footer>
 
-
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      swal({
+          title: 'Eliminado!',
+          text: 'Tu curso se elimino con exito',
+          icon: 'success',
+          confirmButtonText: 'Cool'
+        });
+    </script>
 </body>
 </html>
