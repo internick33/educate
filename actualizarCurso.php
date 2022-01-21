@@ -56,7 +56,7 @@
                                   
                 $fila = $repetir->fetch_assoc();
                 ?>    
-                    <form action="updateCurso.php" method="POST">
+                    <form action="updateCurso.php" method="POST" enctype="multipart/form-data">
 
                     <div class="form-group">
                         <label>Clave</label>
@@ -88,6 +88,12 @@
                     <div class="form-group">
                       <label>Precio</label>
                       <input type="text" class="form-control" name="precio" placeholder="Escribe el precio del curso" required value= <?php echo $fila['precio'] ?>>
+                    </div>
+
+                    <div class="form-group">
+                      <label>Selecciona una imagen</label>
+                      <input type="hidden"  class="form-control" name="MAX_FILE_SIZE" value="1024000" />
+                      <input name="subir_archivo" type="file" />
                     </div>
 
                     <button type="submit" class="btn btn-block btn-primary">Actualizar el Curso</button>

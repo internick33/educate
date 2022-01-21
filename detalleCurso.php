@@ -87,7 +87,7 @@
                       ?>    
                         <tr>
                           <td>
-                            <img src="archivos/<?php echo $fila['clave'] ?>.jpg" alt="" width="80%" class="img img-thumbnail">
+                            <img src="imagenes_cursos/<?php echo $fila['clave'] ?>.jpg" alt="" width="80%" class="img img-thumbnail">
                           </td>
                           <td>
                               <p><b>Clave:</b><?php echo $fila['clave'] ?></p>

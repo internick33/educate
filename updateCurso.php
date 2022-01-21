@@ -27,6 +27,28 @@
                          duracion='$duracion', 
                          precio= '$precio' 
                      WHERE clave='$clave'");
+
+
+        //Subida de Imagenes
+        $nombre = $clave.".jpg";
+        $guardado = $_FILES['subir_archivo']['tmp_name'];
+
+        if(!file_exists('imagenes_cursos')){
+            mkdir('imagenes_cursos', 0777, true);
+            if(file_exists('imagenes')){
+                if(move_uploaded_file($guardado, 'imagenes_cursos/'. $nombre )){
+                    echo "archivo guardado con exito";
+                } else {
+                    echo "archivo no se pudo guardar";
+                }
+            }
+        } else {
+            if(move_uploaded_file($guardado, 'imagenes_cursos/'. $nombre )){
+                echo "archivo guardado con exito";
+            } else {
+                echo "archivo no se pudo guardar";
+            }
+        }             
     ?>
 
 

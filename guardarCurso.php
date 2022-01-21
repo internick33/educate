@@ -20,14 +20,27 @@
        
         $insertar = $con->query("INSERT INTO curso VALUES ($clave,'$nombre', '$descripcion', '$duracion', '$precio')");
 
-        $archivo_origen = $_FILES['subir_archivo']['tmp_name'];
-        $archivo_final = "./archivos/".$clave.".jpg";
 
-        if(move_uploaded_file($archivo_origen, $archivo_final)){
-          print "El archivo fue subido con éxito.";
-        }else{
-          print "Error al intentar subir el archivo.";
-        } 
+        //Subida de imagenes
+        $nombre = $clave.".jpg";
+        $guardado = $_FILES['subir_archivo']['tmp_name'];
+
+        if(!file_exists('imagenes_cursos')){
+            mkdir('imagenes_cursos', 0777, true);
+            if(file_exists('imagenes')){
+                if(move_uploaded_file($guardado, 'imagenes_cursos/'. $nombre )){
+                    echo "archivo guardado con exito";
+                } else {
+                    echo "archivo no se pudo guardar";
+                }
+            }
+        } else {
+            if(move_uploaded_file($guardado, 'imagenes_cursos/'. $nombre )){
+                echo "archivo guardado con exito";
+            } else {
+                echo "archivo no se pudo guardar";
+            }
+        }
     ?>
 
 
